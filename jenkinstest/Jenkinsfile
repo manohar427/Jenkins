@@ -20,6 +20,14 @@ pipeline {
                 }
             }
         }
+        
+         stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'Maven_Home') {
+                    shell 'mvn deploy'
+                }
+            }
+        }
    
    }         
 }

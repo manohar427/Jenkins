@@ -26,14 +26,14 @@ pipeline {
         stage ('Clean & Compile') {
             steps {              
                 bat 'mvn -f jenkinstest/pom.xml clean compile install'
-                echo 'Clean and Build is done.'
+                echo 'Clean,Compile and Install is done.'
             }
         }
         
          stage ('Deploy') {
             steps {              
                 bat 'mvn -f jenkinstest/pom.xml deploy'
-                echo 'Deploy is done.'
+                echo 'Deploy is done successfully.'
             }
         }
         

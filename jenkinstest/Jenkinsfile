@@ -10,7 +10,7 @@ pipeline {
             steps {
                // withMaven(maven : 'Maven_Home') {
                withEnv(["JAVA_HOME=jdk_home", "M2_HOME=F:/Softwares_Inst/apache-maven-3.5.3/bin"]) {
-                  
+                    bat 'echo %jdk_home%'
                     bat 'mvn --version'
                    // bat 'mvn  clean install'
                   

@@ -4,37 +4,20 @@ pipeline {
         maven 'Maven_Home' 
         jdk 'jdk_home' 
     }
-    
     stages {
-        stage ('Compile Stage') {
+        stage ('Initialize') {
             steps {
-               // withMaven(maven : 'Maven_Home') {
-               withEnv(["JAVA_HOME=jdk_home", "M2_HOME=F:/Softwares_Inst/apache-maven-3.5.3/bin"]) {
-                    bat 'echo %jdk_home%'
-                    bat 'mvn --version'
-                   // bat 'mvn  clean install'
-                  
-                }
+                bat '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
             }
         }
-    
-    
-    stage ('Testing Stage') {
 
+        stage ('Build') {
             steps {
-                withMaven(maven : 'Maven_Home') {
-                    bat 'mvn test'
-                }
+                echo 'This is a minimal pipeline.'
             }
         }
-        
-         stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : 'Maven_Home') {
-                    bat 'mvn deploy'
-                }
-            }
-        }
-   
-   }         
+    }
 }

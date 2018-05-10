@@ -6,8 +6,9 @@ pipeline {
             steps {
                // withMaven(maven : 'Maven_Home') {
                withEnv(["JAVA_HOME=jdk_home", "mavenName=Maven_Home"]) {
-                    bat 'mvn  clean install'
                     bat 'mvn --version'
+                    bat 'mvn  clean install'
+                  
                 }
             }
         }

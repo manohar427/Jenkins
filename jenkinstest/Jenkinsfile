@@ -25,7 +25,7 @@ pipeline {
         
         stage ('Clean & Build') {
             steps {              
-                bat 'mvn -f jenkinstest/pom.xml clean build'
+                bat 'mvn -f jenkinstest/pom.xml clean install'
                 echo 'Clean and Build is done.'
             }
         }

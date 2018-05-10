@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage ('Compile Stage') {
             steps {
-                withMaven(maven : 'Maven_Home') {
+               // withMaven(maven : 'Maven_Home') {
+               withEnv(["JAVA_HOME=${jdk_home}", "MAVEN=${Maven_Home}"]) {
                     bat 'mvn  -f jenkinstest/pom.xml clean install'
                     bat 'mvn --version'
                 }

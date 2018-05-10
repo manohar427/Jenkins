@@ -16,7 +16,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'Maven_Home') {
-                    shell 'mvn test'
+                    shell 'mvn -f jenkinstest/pom.xml test'
                 }
             }
         }

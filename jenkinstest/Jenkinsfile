@@ -1,9 +1,9 @@
 pipeline {
     agent any
-   // tools { 
-     //   maven 'Maven_Home' 
-       // jdk 'jdk_home' 
-    //}
+    tools { 
+        maven 'Maven_Home' 
+        jdk 'jdk_home' 
+    }
     stages {
         stage ('Initialize') {
             steps {

@@ -3,11 +3,10 @@ pipeline {
 
     stages {
         stage ('Compile Stage') {
-        stage "Create build output"
             steps {
                 withMaven(maven : 'Maven_Home') {
                     shell 'mvn  clean install'
-                    shell 'mvn --version'
+                    sh 'mvn --version'
                 }
             }
         }

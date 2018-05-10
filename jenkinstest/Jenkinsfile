@@ -6,7 +6,7 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven_Home') {
                     shell 'mvn  clean install'
-                    sh 'mvn --version'
+                    bt 'mvn --version'
                 }
             }
         }

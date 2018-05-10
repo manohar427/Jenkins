@@ -14,12 +14,23 @@ pipeline {
             }
         }
 
-        stage ('Build') {
+        stage ('Version Verifying') {
             steps {
                 bat 'java -version'
                 bat 'mvn --version'
-                echo 'This is a minimal pipeline.'
+                echo 'Version Verifying in  pipeline.'
             }
         }
+        
+        
+        stage ('Clean & Build') {
+            steps {              
+                bat 'mvn clean build'
+                echo 'Clean and Build is done.'
+            }
+        }
+        
+        
+        
     }
 }

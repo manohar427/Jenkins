@@ -6,7 +6,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'Maven_Home') {
-                    shell 'mvn clean compile'
+                    shell 'mvn -f jenkinstest/pom.xml clean compile'
                 }
             }
         }

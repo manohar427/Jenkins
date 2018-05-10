@@ -33,7 +33,7 @@ pipeline {
          stage ('Deploy') {
             steps {              
                 bat 'mvn -f jenkinstest/pom.xml deploy'
-                echo 'Deploy is done successfully.'
+                echo 'Deploy is done successfully'
             }
         }
         

@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
             steps {
                // withMaven(maven : 'Maven_Home') {
-               withEnv(["JAVA_HOME=jdk_home", "MAVEN_HOME=Maven_Home"]) {
+               withEnv(["JAVA_HOME=jdk_home", "MAVEN_HOME=F:\Softwares_Inst\apache-maven-3.5.3\bin"]) {
                     bat 'mvn --version'
                     bat 'mvn  clean install'
                   
